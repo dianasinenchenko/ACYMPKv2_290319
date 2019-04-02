@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 
 import com.devitis.acympkv2_290319.R;
-import com.devitis.acympkv2_290319.db.data.realmmodel.Location;
+import com.devitis.acympkv2_290319.db.data.realmmodel.Location1;
 import com.devitis.acympkv2_290319.db.ui.location.add.ILocationView;
 
 import butterknife.BindView;
@@ -24,7 +24,7 @@ import io.realm.RealmResults;
 public class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapter.ViewHolder> implements RealmChangeListener {
 
 
-    private RealmResults<Location> locations;
+    private RealmResults<Location1> locations;
     private ILocationView iLocationView;
 
     public LocationListAdapter(ILocationView locationView) {
@@ -40,7 +40,7 @@ public class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapte
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        final Location location = locations.get(position);
+        final Location1 location = locations.get(position);
 
         holder.textName.setText(location.getName());
         holder.textLat.setText(location.getLat());
@@ -63,7 +63,7 @@ public class LocationListAdapter extends RecyclerView.Adapter<LocationListAdapte
     }
 
 
-    public void setLocations(final RealmResults<Location> location) {
+    public void setLocations(final RealmResults<Location1> location) {
         locations = location;
         locations.addChangeListener(this);
         notifyDataSetChanged();

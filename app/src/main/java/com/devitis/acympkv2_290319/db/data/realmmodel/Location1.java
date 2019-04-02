@@ -7,7 +7,7 @@ import io.realm.annotations.PrimaryKey;
  * Created by Diana on 29.03.2019.
  */
 
-public class Location extends RealmObject {
+public class Location1 extends RealmObject {
 
     @PrimaryKey
     private String id;

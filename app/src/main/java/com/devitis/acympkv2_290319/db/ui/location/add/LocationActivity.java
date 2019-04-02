@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 
 import com.devitis.acympkv2_290319.R;
-import com.devitis.acympkv2_290319.db.data.realmmodel.Location;
+import com.devitis.acympkv2_290319.db.data.realmmodel.Location1;
 import com.devitis.acympkv2_290319.db.di.component.DaggerILocationComponent;
 import com.devitis.acympkv2_290319.db.di.component.IDataBaseApplicationComponent;
 import com.devitis.acympkv2_290319.db.di.module.LocationModule;
@@ -41,7 +41,7 @@ public class LocationActivity extends DataBaseMainActivity implements ILocationV
 
 
     @Override
-    public void showLocation(RealmResults<Location> locations) {
+    public void showLocation(RealmResults<Location1> locations) {
 
         locationListAdapter.setLocations(locations);
 

@@ -2,7 +2,7 @@ package com.devitis.acympkv2_290319.db.data.service;
 
 
 
-import com.devitis.acympkv2_290319.db.data.realmmodel.Location;
+import com.devitis.acympkv2_290319.db.data.realmmodel.Location1;
 import com.devitis.acympkv2_290319.db.ui.location.add.IAddLocationView;
 
 import java.util.UUID;
@@ -26,12 +26,12 @@ public class RealmServiceDB {
         realmService.close();
     }
 
-    public RealmResults<Location> getAllLocation() {
-        return realmService.where(Location.class).findAll();
+    public RealmResults<Location1> getAllLocation() {
+        return realmService.where(Location1.class).findAll();
     }
 
-    public Location getLocationById(final String locationId) {
-        return realmService.where(Location.class).equalTo("id", locationId).findFirst();
+    public Location1 getLocationById(final String locationId) {
+        return realmService.where(Location1.class).equalTo("id", locationId).findFirst();
     }
 
     public void addLocationAsync(final String name, final String lat, final String lon, final IAddLocationView iAddLocationView) {
@@ -39,7 +39,7 @@ public class RealmServiceDB {
             @Override
             public void execute(Realm realm) {
                 try {
-                    Location location = realm.createObject(Location.class, UUID.randomUUID().toString());
+                    Location1 location = realm.createObject(Location1.class, UUID.randomUUID().toString());
                     location.setName(name);
                     location.setLat(lat);
                     location.setLon(lon);
